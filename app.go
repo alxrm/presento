@@ -42,7 +42,7 @@ func main() {
     }
   })
 
-  os.Stderr.WriteString("Go to http://" + address + port + "/" + randomKey + " to control\n")
+  println("Go to http://" + address + port + "/" + randomKey + " to control\n")
 
   router.Run(port)
 }
