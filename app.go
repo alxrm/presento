@@ -3,7 +3,7 @@ package main
 import (
   "github.com/gin-gonic/gin"
   "gopkg.in/olahol/melody.v1"
-  "os"
+  "net/http"
 )
 
 const port = ":5000"
