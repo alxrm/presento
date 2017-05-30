@@ -1,8 +1,8 @@
 package main
 
 import (
-  "github.com/gin-gonic/gin"
-  "gopkg.in/olahol/melody.v1"
+	"github.com/gin-gonic/gin"
+	"gopkg.in/olahol/melody.v1"
 )
 
 const port = ":5000"
@@ -11,37 +11,37 @@ const port = ":5000"
 
 func main() {
 
-  keys := NewKeyHolder()
+	keys := NewKeyHolder()
 
-  gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.ReleaseMode)
 
-  router := gin.Default()
-  socket := melody.New()
+	router := gin.Default()
+	socket := melody.New()
 
-  address := findLocalIpAdress()
-  randomKey := generateRandomKey(4)
+	address := findLocalIpAddress()
+	randomKey := generateRandomKey(4)
 
-  router.GET("/" + randomKey, func(c *gin.Context) {
-    c.Writer.Header().Set("Content-Type", "text/html")
-    c.String(200, indexHtml)
-  })
+	router.GET("/"+randomKey, func(c *gin.Context) {
+		c.Writer.Header().Set("Content-Type", "text/html")
+		c.String(200, indexHtml)
+	})
 
-  router.GET("/presento", func(c *gin.Context) {
-    socket.HandleRequest(c.Writer, c.Request)
-  })
+	router.GET("/presento", func(c *gin.Context) {
+		socket.HandleRequest(c.Writer, c.Request)
+	})
 
-  socket.HandleMessage(func(s *melody.Session, msg []byte) {
-    command := string(msg)
+	socket.HandleMessage(func(s *melody.Session, msg []byte) {
+		command := string(msg)
 
-    switch command {
-    case "left":
-      keys.PressLeft()
-    case "right":
-      keys.PressRight()
-    }
-  })
+		switch command {
+		case "left":
+			keys.PressLeft()
+		case "right":
+			keys.PressRight()
+		}
+	})
 
-  println("Go to http://" + address + port + "/" + randomKey + " to control\n")
+	println("Go to http://" + address + port + "/" + randomKey + " to control\n")
 
-  router.Run(port)
+	router.Run(port)
 }

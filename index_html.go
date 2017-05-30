@@ -18,7 +18,7 @@ const (
   #left, #right {
     position: absolute;
     display: table;
-    font-size: 20rem;
+    font-size: 16rem;
     top: 0;
     height: 100%;
     width: 50%;
@@ -56,10 +56,14 @@ const (
 <body>
 <div id="container">
   <div id="left">
-    <div class="text"> <</div>
+    <div class="text">
+      <
+    </div>
   </div>
   <div id="right">
-    <div class="text"> ></div>
+    <div class="text">
+      >
+    </div>
   </div>
 </div>
 

@@ -21,9 +21,7 @@ _cgo_export.*
 
 _testmain.go
 
-*.exe
 *.test
 *.prof
 
-build
 .idea/
