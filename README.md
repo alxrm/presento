@@ -27,7 +27,7 @@ Or if you use [goxc](https://github.com/laher/goxc), sure, why not, but check th
 
 ## Usage
 
-_The only requirement is your cellphone has to be in the same Wi-fi network as your laptop, it simply would not work otherwise_
+__NOTE: The only requirement is your cellphone has to be in the same Wi-fi network as your laptop, it simply would not work otherwise__
 
 As you can(or cannot) see on the GIF above, the flow is pretty simple:
 
