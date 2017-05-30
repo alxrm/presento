@@ -24,6 +24,7 @@ This should generate a `presento` binary.
 
 Or if you use [goxc](https://github.com/laher/goxc), sure, why not, but check the [Contribution](https://github.com/alxrm/presento#contributing) chapter first
 
+_That html file, which is served via static server is also included in the binary, just use `$ go generate` before build everytime you change the html file, more on that [here](https://github.com/bouk/file2const)_
 
 ## Usage
 
