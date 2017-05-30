@@ -22,7 +22,7 @@ $ go build .
 
 This should generate a `presento` binary.
 
-Or if you use [goxc](https://github.com/laher/goxc), sure, why not, but check the [Contribution](https://github.com/alxrm/presento#Contribution) chapter first
+Or if you use [goxc](https://github.com/laher/goxc), sure, why not, but check the [Contribution](https://github.com/alxrm/presento#contributing) chapter first
 
 
 ## Usage
@@ -58,7 +58,7 @@ Then this thought came:
 _"Well it would be nice to have the ability to change the slides, like all those guys I usually see on the conferences"_
 
 
-## Contributing
+## Contribution
 
 Presento has some problems with building for Linux with [goxc](https://github.com/laher/goxc) on the OS X, whilst it seems to be fine for the Windows/OS X. The problem comes from this awesome [library](https://github.com/micmonay/keybd_event), so if you can help it, you're more than welcome!
 
