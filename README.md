@@ -6,7 +6,11 @@
 
 ## Setup
 
-__NOTE: If you simply need the working product, just jump into [builds](https://github.com/alxrm/presento/tree/master/build/snapshot) directory and choose one of the executable binaries__
+### Precompiled binaries
+
+If you simply need the working product, just go [here](https://github.com/alxrm/presento/releases) and download executable binary file for your platform
+
+### Manual building
 
 For those who want to build it manually. Presento is written in Go so you'll need to [install Go first](https://golang.org/dl/). Once that's done, you can build the app. First get the source:
 
