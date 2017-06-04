@@ -18,7 +18,7 @@ For those who want to build it manually. Presento is written in Go so you'll nee
 $ go get -v github.com/alxrm/presento
 ```
 
-then go to the directory
+then go to the directory:
 
 ```bash
 $ cd $GOPATH/src/github.com/alxrm/presento
