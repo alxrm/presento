@@ -6,6 +6,7 @@ import (
 )
 
 const port = ":5000"
+const prompterFile = "./prompter.md"
 
 //go:generate file2const -package main assets/index.html:indexHtml index_html.go
 
@@ -24,10 +25,15 @@ func main() {
 	router.GET("/"+randomKey, func(c *gin.Context) {
 		c.Writer.Header().Set("Content-Type", "text/html")
 		c.String(200, indexHtml)
+		//c.File("./assets/index.html")
 	})
 
 	router.GET("/presento", func(c *gin.Context) {
 		socket.HandleRequest(c.Writer, c.Request)
+	})
+
+	socket.HandleConnect(func(s *melody.Session) {
+		s.Write(readMdFileToHtml(prompterFile))
 	})
 
 	socket.HandleMessage(func(s *melody.Session, msg []byte) {
@@ -43,5 +49,9 @@ func main() {
 
 	println("Go to http://" + address + port + "/" + randomKey + " to control\n")
 
-	router.Run(port)
+	err := router.Run(port)
+
+	if err != nil {
+		killWithMessage("Couldn't start the server, releasing the port, try again")
+	}
 }
