@@ -1,13 +1,13 @@
 package main
 
 import (
+	"github.com/kardianos/osext"
 	"github.com/russross/blackfriday"
 	"io/ioutil"
 	"math/rand"
 	"net"
+	"path"
 	"time"
-  "path"
-  "github.com/kardianos/osext"
 )
 
 func generateRandomKey(length int) string {
@@ -24,7 +24,7 @@ func generateRandomKey(length int) string {
 }
 
 func readMdFileToHtml(filename string) []byte {
-  normalizedRelativePath := normalizeRelativePath(filename)
+	normalizedRelativePath := normalizeRelativePath(filename)
 
 	if bytes, err := ioutil.ReadFile(normalizedRelativePath); err == nil {
 		return blackfriday.MarkdownBasic(bytes)
@@ -34,9 +34,9 @@ func readMdFileToHtml(filename string) []byte {
 }
 
 func normalizeRelativePath(relativePath string) string {
-  filename, _ := osext.Executable()
+	filename, _ := osext.Executable()
 
-  return path.Join(path.Dir(filename), relativePath)
+	return path.Join(path.Dir(filename), relativePath)
 }
 
 func findLocalIpAddress() string {
