@@ -58,6 +58,16 @@ This was made because there might be those cases when someone sitting in the roo
 
 4) Look cool 
 
+## Prompter
+
+Sometimes it might be useful to have some lyrics while you're doing your keynote.
+
+
+__To add one, all you need to do is just to create a file `prompter.md` in the directory where your `presento` binary's been started from.__   
+
+
+It'll just read the contents and render it as html, nice and simple.
+
 ## Reason
 
 So most of the time, when I need to show a presentation it goes like this:
