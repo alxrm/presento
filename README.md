@@ -4,6 +4,14 @@
 
 <p align="center"><img src="https://github.com/alxrm/presento/blob/master/art/flow.gif?raw=true" alt="Example"></p>
 
+<p align="center"><i>NOTE: current version with <a href="https://github.com/alxrm/presento#prompter">prompter</a> looks like this</i></p>
+
+<p align="center">
+  <img src="https://github.com/alxrm/presento/blob/master/art/screenshot_3.png" width="270" height="480" alt="3">
+  <img src="https://github.com/alxrm/presento/blob/master/art/screenshot_2.png" width="270" height="480" alt="2">
+  <img src="https://github.com/alxrm/presento/blob/master/art/screenshot_1.png" width="270" height="480" alt="1">
+</p>
+
 ## Setup
 
 ### Precompiled binaries
@@ -66,7 +74,7 @@ Sometimes it might be useful to have some lyrics while you're doing your keynote
 __To add one, all you need to do is just to create a file `prompter.md` in the directory where your `presento` binary's been started from.__   
 
 
-It'll just read the contents and render it as html, nice and simple.
+It'll just read the contents and render it as html, like in those screenshots above, nice and simple.
 
 ## Reason
 
