@@ -4,7 +4,7 @@
 
 <p align="center"><img src="https://github.com/alxrm/presento/blob/master/art/flow.gif?raw=true" alt="Example"></p>
 
-<p align="center"><i>NOTE: current version with <a href="https://github.com/alxrm/presento#prompter">prompter</a> looks like this</i></p>
+<p align="center"><b>Current version with <a href="https://github.com/alxrm/presento#prompter">prompter</a> looks like this:</b></p>
 
 <p align="center">
   <img src="https://github.com/alxrm/presento/blob/master/art/screenshot_3.png" width="270" height="480" alt="3">
