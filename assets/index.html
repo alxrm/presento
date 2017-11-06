@@ -11,17 +11,25 @@
   body {
     background: white;
     color: rgba(0, 0, 0, .8);
+    padding: 0;
+    margin: 0;
+  }
+
+  #controls {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   }
 
   #left, #right {
-    position: absolute;
     display: table;
-    font-size: 4rem;
-    top: 0;
+    font-size: 72px;
     width: 50%;
     overflow: hidden;
     cursor: pointer;
-    transition: color 0.1s, background 0.1s ease-in-out;
+    transition: color 0.08s, background 0.08s ease-in-out;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -30,23 +38,20 @@
   }
 
   #left {
-    left: 0;
+    float: left;
   }
 
   #right {
-    left: 50%;
+    float: right;
   }
 
   #right:active,
   #left:active {
-    background: rgba(0, 0, 0, .8);
+    background: #333;
     color: white;
   }
 
   #prompter {
-    position: absolute;
-    top: 6em;
-    bottom: 0;
     overflow-y: scroll;
     font-family: CustomSerif, Georgia, Cambria, 'Times New Roman', serif;
     font-weight: 400;
@@ -54,6 +59,7 @@
     font-size: 18px;
     line-height: 1.58;
     box-sizing: border-box;
+    padding: 80px 12px 0;
   }
 
   .switch {
@@ -63,25 +69,15 @@
   }
 
   @media screen and (min-width: 768px) {
-    body {
-      padding: 16px;
-    }
-
     #prompter {
-      left: 50%;
-      margin-left: -360px;
-      max-width: 720px;
+      max-width: 736px;
+      margin: 0 auto;
     }
   }
 
   @media screen and (max-width: 768px) {
-    body {
-      padding: 0;
-    }
-
     #prompter {
-      width: calc(100% - 12px);
-      padding: 0 6px;
+      width: calc(100% - 24px);
       margin: 0;
     }
   }
@@ -90,14 +86,16 @@
 
 <body>
 <div id="container">
-  <div id="left">
-    <div class="switch">
-      <
+  <div id="controls">
+    <div id="left">
+      <div class="switch">
+        <
+      </div>
     </div>
-  </div>
-  <div id="right">
-    <div class="switch">
-      >
+    <div id="right">
+      <div class="switch">
+        >
+      </div>
     </div>
   </div>
   <div id="prompter">
