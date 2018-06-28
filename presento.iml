@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="GO_MODULE" version="4">
+<module type="WEB_MODULE" version="4">
+  <component name="Go" enabled="true" />
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Go 1.8.1" jdkType="Go SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="GOPATH &lt;presento&gt;" level="project" />
+    &lt;orderEntry type=&quot;library&quot; scope=&quot;PROVIDED&quot; name=&quot;Go SDK&quot; level=&quot;project&quot; /&gt;
   </component>
 </module>
+
