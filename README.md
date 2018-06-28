@@ -4,37 +4,33 @@
 
 <p align="center"><img src="https://github.com/alxrm/presento/blob/master/art/flow.gif?raw=true" alt="Example"></p>
 
+<p align="center"><b>Current version with <a href="https://github.com/alxrm/presento#prompter">prompter</a> looks like this:</b></p>
+
+<p align="center">
+  <img src="https://github.com/alxrm/presento/blob/master/art/screenshot_3.png" width="270" height="480" alt="3">
+  <img src="https://github.com/alxrm/presento/blob/master/art/screenshot_2.png" width="270" height="480" alt="2">
+  <img src="https://github.com/alxrm/presento/blob/master/art/screenshot_1.png" width="270" height="480" alt="1">
+</p>
+
 ## Setup
 
 ### Precompiled binaries
 
 If you simply need the working product, just go [here](https://github.com/alxrm/presento/releases) and download executable binary file for your platform
 
-### Manual building
+### Install
 
-For those who want to build it manually. Presento is written in Go so you'll need to [install Go first](https://golang.org/dl/). Once that's done, you can build the app. First get the source:
-
-```bash
-$ go get -v github.com/alxrm/presento
-```
-
-then go to the directory:
+For those who want to install it as a tool for terminal. Presento is written in Go so you'll need to [install Go first](https://golang.org/dl/). Once that's done, you can install the thing. Just run this:
 
 ```bash
-$ cd $GOPATH/src/github.com/alxrm/presento
+$ go get github.com/alxrm/presento
 ```
 
-and run:
+_That's it! Now you can always access it in terminal:_
 
 ```bash
-$ go build .
+$ presento
 ```
-
-This should generate a `presento` binary.
-
-Or if you use [goxc](https://github.com/laher/goxc), sure, why not, but check the [Contribution](https://github.com/alxrm/presento#contributing) chapter first
-
-_That html file, which is served via static server is also included in the binary, just use `$ go generate` before build everytime you change the html file, more on that [here](https://github.com/bouk/file2const)_
 
 ## Usage
 
@@ -42,7 +38,7 @@ __NOTE: The only requirement is your cellphone has to be in the same Wi-fi netwo
 
 As you can(or cannot) see on the GIF above, the flow is pretty simple:
 
-1) You launch the executable file, it will open the command line app with this text in it:
+1) You launch the executable file(or run it from terminal if you istalled it), it will open the command line app with this text in it:
 
 ```
   Go to http://192.168.0.**:5000/**** to control
@@ -66,7 +62,7 @@ Sometimes it might be useful to have some lyrics while you're doing your keynote
 __To add one, all you need to do is just to create a file `prompter.md` in the directory where your `presento` binary's been started from.__   
 
 
-It'll just read the contents and render it as html, nice and simple.
+It'll just read the contents and render it as html, like in those screenshots above, nice and simple.
 
 ## Reason
 
@@ -82,6 +78,8 @@ _"Well it would be nice to have the ability to change the slides, like all those
 ## Contribution
 
 Presento has some problems with building for Linux with [goxc](https://github.com/laher/goxc) on the OS X, whilst it seems to be fine for the Windows/OS X. The problem comes from this awesome [library](https://github.com/micmonay/keybd_event), so if you can help it, you're more than welcome!
+
+_That html file, which is served via static server is also included in the binary, just use `$ go generate` before build everytime you change the html file, more on that [here](https://github.com/bouk/file2const)_
 
 ## License
 
