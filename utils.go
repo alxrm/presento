@@ -1,14 +1,35 @@
 package main
 
 import (
+	"github.com/fumiyas/go-tty"
 	"github.com/kardianos/osext"
+	"github.com/mattn/go-colorable"
+	"github.com/qpliu/qrencode-go/qrencode"
 	"github.com/russross/blackfriday"
 	"io/ioutil"
 	"math/rand"
 	"net"
+	"os"
 	"path"
 	"time"
 )
+
+func printQrCode(src string, inverse bool) {
+	grid, errQr := qrencode.Encode(src, qrencode.ECLevelL)
+
+	if errQr != nil {
+		panic(errQr)
+	}
+
+	da1, errQrText := tty.GetDeviceAttributes1(os.Stdout)
+
+	if errQrText == nil && da1[tty.DA1_SIXEL] {
+		printSixelQr(os.Stdout, grid, inverse)
+	} else {
+		stdout := colorable.NewColorableStdout()
+		printAnsiArtQr(stdout, grid, inverse)
+	}
+}
 
 func generateRandomKey(length int) string {
 	letters := []rune("abcdefghijklmnopqrstuvwxyz")

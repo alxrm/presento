@@ -21,6 +21,7 @@ func main() {
 
 	address := findLocalIpAddress()
 	randomKey := generateRandomKey(4)
+	resultLink := "http://" + address + port + "/" + randomKey
 
 	router.GET("/"+randomKey, func(c *gin.Context) {
 		c.Writer.Header().Set("Content-Type", "text/html")
@@ -47,11 +48,13 @@ func main() {
 		}
 	})
 
-	println("Go to http://" + address + port + "/" + randomKey + " to control\n")
+	printQrCode(resultLink, true)
+	println("Go to " + resultLink + " to control")
+	println("Or scan this QR code to open the link on your device")
 
-	err := router.Run(port)
+	errServer := router.Run(port)
 
-	if err != nil {
+	if errServer != nil {
 		killWithMessage("Couldn't start the server, releasing the port, try again")
 	}
 }
